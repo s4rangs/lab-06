@@ -22,6 +22,44 @@ public class CityList {
         cities.add(city);
     }
     /**
+     * Returns whether city is in list or not
+     *
+     * @param city
+     * this is city to check
+     * @return
+     * returns true if city is in list
+     */
+    public boolean hasCity(City city) {
+        return cities.contains(city);
+    }
+
+    /**
+     * Deletes city from list
+     * Throws exception if city not in list
+     *
+     * @param city
+     * the city to delete
+     * @throws IllegalArgumentException
+     * if city not in  list
+     */
+    public void delete(City city) {
+        if (!cities.contains(city)) {
+            throw new IllegalArgumentException();
+        }
+        cities.remove(city);
+    }
+
+    /**
+     * Returns number of cities in list
+     *
+     * @return
+     * returns cities amount
+     */
+    public int countCities() {
+        return cities.size();
+    }
+
+    /**
      * This returns a sorted list of cities
      * @return
      * Return the sorted list
